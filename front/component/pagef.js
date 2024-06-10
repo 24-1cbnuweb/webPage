@@ -176,7 +176,7 @@ function loadselectJSON(callback) {
 
   $.getJSON(Fpath, function (data) {
     // Filter the data to only include items where `incategory` matches the search input
-    const selecteddata = data.filter(item => item.incategory.toLowerCase() === searchInput);
+    const selecteddata = data.filter(item => item.name.toLowerCase().includes(searchInput));
     callback(selecteddata); // Call the callback with the filtered data
   });
 }

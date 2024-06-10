@@ -174,9 +174,7 @@ function loadselectJSON(callback) {
 
   $.getJSON(Ipath, function (data) {
     // Filter the data to only include items where `incategory` matches the search input
-    const selecteddata = data.filter(
-      (item) => item.incategory.toLowerCase() === searchInput
-    );
+    const selecteddata = data.filter(item => item.name.toLowerCase().includes(searchInput));
     callback(selecteddata); // Call the callback with the filtered data
   });
 }
@@ -240,7 +238,7 @@ function loadlowpJSON(callback) {
     // Filter the data to only include items where `incategory` matches the search input
     if (searchInput) {
       lowpdata = lowpdata.filter(
-        (item) => item.incategory.toLowerCase() === searchInput
+        (item) => item.name.toLowerCase().includes(searchInput)
       );
     }
 
@@ -267,7 +265,7 @@ function loadhighpJSON(callback) {
     // Filter the data to only include items where `incategory` matches the search input
     if (searchInput) {
       highpdata = highpdata.filter(
-        (item) => item.incategory.toLowerCase() === searchInput
+        (item) => item.name.toLowerCase().includes(searchInput)
       );
     }
 
@@ -293,7 +291,7 @@ function loadhighdcJSON(callback) {
 
     if (searchInput) {
       highdcdata = highdcdata.filter(
-        (item) => item.incategory.toLowerCase() === searchInput
+        (item) => item.name.toLowerCase().includes(searchInput)
       );
     }
 
