@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Acme&family=Gochi+Hand&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Acme&family=Gochi+Hand&family=Gowun+Dodum&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/product.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>FruitFruit</title>
+  </head>
+  <body>
+    <div class="nav">
+      <button onclick="toggle()">
+        <img src="./css/icon.png" width="50px" />
+      </button>
+      <div class="nav_menu">
+        <a href="index.html">HOME</a>
+        <div class="nav_fruit">
+          <a>SHOP</a>
+          <div class="nav_fruitmenu">
+            <a href="domestic.html">국내과일</a>
+            <a href="imported.html">수입과일</a>
+            <a href="frozen.html">냉동/건조과일</a>
+          </div>
+        </div>
+        <a href="about.html">ABOUT</a>
+      </div>
+    </div>
+    <div class="right" id="cart" style="padding-top: 5px">
+      <div style="height: 40px">
+        <img src="css/heart.png" style="height: 40px" />
+      </div>
+      <!-- 초기화 버튼 -->
+      <button
+        class="priceselect"
+        onclick="clearCart()"
+        style="text-decoration: underline; transform: translateY(-15px)"
+      >
+        Clear Cart
+      </button>
+    </div>
+
+    <div class="main">
+      <div class="maintitle">
+        <h1 style="margin-bottom: 25px;">Fruit Fruit</h1>
+      </div>
+      <div class="maintext">
+        <a class="comment">Marketkurly? Coupang?</a>
+        <a
+          ><br />Now compare at a glance!<br />
+          This is a fruit price comparison site!</a
+        >
+      </div>
+    </div>
+
+    <div class="bestSell">
+      <h3>Best Sell Here !</h3>
+      <br />
+      <div class="domestic">
+        <h2>국내 과일</h2>
+        <div class="container" id="domesticContainer"></div>
+      </div>
+      <div class="imported">
+        <h2>수입 과일</h2>
+        <div class="container" id="importedContainer"></div>
+      </div>
+      <div class="frozen">
+        <h2>냉동/건조 과일</h2>
+        <div class="container" id="frozenContainer"></div>
+      </div>
+    </div>
+
+    <div class="bottom"></div>
+
+    <script src="component/maind.js"></script>
+    <script src="component/mainf.js"></script>
+    <script src="component/maini.js"></script>
+    <script src="component/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/domestic.css" />
+    <link rel="stylesheet" href="css/innerpage.css" />
+    <link rel="stylesheet" href="css/product.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Domestic</title>
+  </head>
+  <body>
+    <div class="nav">
+      <button onclick="toggle()">
+        <img src="./css/icon.png" width="50px" />
+      </button>
+      <div class="nav_menu">
+        <a href="index.html">HOME</a>
+        <div class="nav_fruit">
+          <a>SHOP</a>
+          <div class="nav_fruitmenu">
+            <a href="domestic.html">국내과일</a>
+            <a href="imported.html">수입과일</a>
+            <a href="frozen.html">냉동/건조과일</a>
+          </div>
+        </div>
+        <a href="about.html">ABOUT</a>
+      </div>
+    </div>
+    <div class="right" id="cart">
+      <div style="height: 30px">
+        <img src="css/heart.gif" style="height: 50px" />
+      </div>
+      <!-- 초기화 버튼 -->
+      <button
+        class="priceselect"
+        onclick="clearCart()"
+        style="text-decoration: underline"
+      >
+        Clear Cart
+      </button>
+    </div>
+
+    <div class="main">
+      <div class="maintitle">
+        <h1>냉동/건조 과일</h1>
+        <div class="main_search">
+          <br />
+          <input id="nav" class="searchbar" placeholder="search" onkeyup="" />
+          <button onclick="selectshow()" style="background-color: transparent; border: 0;"><img src="css/search.png" class="searchbtn"></button><br /><br />
+          <hr />
+        </div>
+      </div>
+
+      <div>
+        <div class="pricetag">
+          <button onclick="show()" class="priceselect">
+            <img src="css/surprised.gif" /> 추천순
+          </button>
+        </div>
+        <div class="pricetag">
+          <button onclick="lowdata()" class="priceselect">
+            <img src="css/low-price.gif" /> 낮은가격순
+          </button>
+        </div>
+        <div class="pricetag">
+          <button onclick="highdata()" class="priceselect">
+            <img src="css/low-price.gif" style="transform: rotateX(180deg)" />
+            높은가격순
+          </button>
+        </div>
+        <div class="pricetag">
+          <button onclick="highdc()" class="priceselect">
+            <img src="css/price-tag.gif" /> 높은할인순
+          </button>
+        </div>
+        <br />
+      </div>
+
+      <div class="itemsFrozen">
+        <br /><br />
+        <div id="load" style="display: none;">
+          <img src="css/soon.gif" alt="loading" >
+        </div>
+        <div class="container" id="FpageContainer"></div>
+      </div>
+    </div>
+
+    <script src="component/pagef.js"></script>
+    <script src="component/main.js"></script>
+  </body>
+</html>

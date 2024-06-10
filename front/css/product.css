@@ -1,0 +1,75 @@
+.img {
+  width: 220px;
+  height: 270px;
+  display: block; /* 이미지 블록 레벨로 변환 */
+  margin-bottom: 10px; /* 이미지와 텍스트 사이 간격 추가 */
+}
+
+.item {
+  width: 220px;
+  text-align: left; /* 텍스트 왼쪽 정렬 */
+  margin-bottom: 100px; /* 항목 사이 간격 추가 */
+}
+
+.item-content {
+  height: 400px;
+}
+
+.item h3 {
+  font-size: 18px;
+  margin: 5px 0; /* 제목 간격 조정 */
+}
+
+.item a {
+  font-size: 18px;
+  display: block; /* 링크 요소 블록 레벨로 변환 */
+  margin: 2px 0; /* 링크 간격 조정 */
+}
+
+.item p {
+  display: inline; /* 할인 텍스트 인라인 유지 */
+  margin-right: 5px; /* 할인 텍스트와 가격 사이 간격 추가 */
+}
+
+.price {
+  font-weight: bold;
+  border: 0;
+}
+
+.link-div, .cart-div {
+  display: block;
+  float: left;
+  position: relative;
+  text-align: center; /* 링크 버튼을 가운데 정렬 */
+  margin-top: 10px; /* 링크 버튼 상단 간격 추가 */
+  border: 1px black solid;
+  height: 30px;
+  width: 100px;
+  margin: 1px;
+  align-content: center;
+  align-items: center;
+}
+
+.link-button, .cart-button {
+  border: 0; 
+  background: transparent; /* 버튼 배경 제거 */
+  padding: 0; /* 버튼 패딩 제거 */
+  height: 20px;
+  width: 100px;
+}
+
+.link-button:hover, .cart-button:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  z-index: 1;
+  transition: all 0.5s;
+}
+
+.link-img:hover, .cart-img:hover {
+  cursor: pointer;
+}
+
+.link-img, .cart-img {
+  width: 20px;
+  height: 20px;
+}
