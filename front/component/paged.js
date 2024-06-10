@@ -75,8 +75,8 @@ function showPDomestic(data) {
     divItem.className = "item";
 
     const itemName =
-      data[i].name.length > 30
-        ? data[i].name.substring(0, 30) + "..."
+      data[i].name.length > 25
+        ? data[i].name.substring(0, 25) + "..."
         : data[i].name;
 
     const contentDiv = document.createElement("div");

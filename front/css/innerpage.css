@@ -53,12 +53,13 @@ body {
   max-width: 600px; /* adjust as needed */
   text-align: center;
 }
-.searchbtn{
+.searchbar {
+  width: 550px;
   height: 40px;
-  border: 0;
-  vertical-align: bottom;
-  height: 30px ;
-  background-color: transparent;
+  font-size: 26px;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
 }
 .content {
   height: 2000px; /* just to create a scrollable area */
