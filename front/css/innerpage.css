@@ -61,6 +61,13 @@ body {
   padding-right: 20px;
   box-sizing: border-box;
 }
+.searchbtn{
+  height: 40px;
+  border: 0;
+  vertical-align: bottom;
+  height: 30px ;
+  background-color: transparent;
+}
 .content {
   height: 2000px; /* just to create a scrollable area */
 }
