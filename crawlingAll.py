@@ -6,7 +6,7 @@ import pandas as pd
 import re
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
-
+import os
 import re
 
 def extract_weights(text, price):
@@ -303,11 +303,25 @@ final_foreign_fruits = reset_and_assign_id(final_foreign_fruits)
 final_frozen_fruits = reset_and_assign_id(final_frozen_fruits)
 df = reset_and_assign_id(df)
 
+# 상대 경로로 엑셀 파일 생성
+current_dir = os.path.dirname(os.path.abspath(__file__))
+output_dir = os.path.join(current_dir, 'tutorial', 'media')
+if not os.path.exists(output_dir):
+    os.makedirs(output_dir)
+
+All = os.path.join(output_dir, 'All Fruit Data.xlsx')
+Domestic = os.path.join(output_dir, 'Domestic Fruit Data.xlsx')
+Foreign = os.path.join(output_dir, 'Foreign Fruit Data.xlsx')
+Frozen = os.path.join(output_dir, 'Frozen Fruit Data.xlsx')
+
+
 # 엑셀 파일로 저장
-df.to_excel('All Fruit Data.xlsx', index=False)
-final_domestic_fruits.to_excel('Domestic Fruit Data.xlsx', index=False)
-final_foreign_fruits.to_excel('Foreign Fruit Data.xlsx', index=False)
-final_frozen_fruits.to_excel('Frozen Fruit Data.xlsx', index=False)
+df.to_excel(All, index=False)
+final_domestic_fruits.to_excel(Domestic, index=False)
+final_foreign_fruits.to_excel(Foreign, index=False)
+final_frozen_fruits.to_excel(Frozen, index=False)
+
+
 
 print("All Fruit Data 파일이 성공적으로 생성되었습니다.")
 print("Domestic, Foreign, Frozen Fruit Data 파일이 성공적으로 생성되었습니다.")
