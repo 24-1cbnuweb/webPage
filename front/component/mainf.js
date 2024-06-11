@@ -42,17 +42,18 @@ function removeFromCart(button) {
 }
 
 function showFrozen(data) {
-  if (!maindcontainer) {
-    console.error("maindcontainer element not found");
+  if (!mainfcontainer) {
+    console.error("mainfcontainer element not found");
     return;
   }
 
-  var startDIndex = (currentDPage - 1) * itemsPerPage;
-  var endDIndex = Math.min(startDIndex + itemsPerPage, data.length);
-  maindcontainer.innerHTML = "";
+  mainfcontainer.innerHTML = ""; // 기존 내용 초기화
 
-  for (var i = startDIndex; i < endDIndex; i++) {
-    const item = data[i];  // Use a local variable to store the current item
+  var startFIndex = (currentFPage - 1) * itemsPerPage;
+  var endFIndex = Math.min(startFIndex + itemsPerPage, data.length);
+
+  for (var i = startFIndex; i < endFIndex; i++) {
+    const item = data[i];
     var div = document.createElement("div");
     div.className = "item";
     const itemName = item.name.length > 30 ? item.name.substring(0, 30) + "..." : item.name;
@@ -62,7 +63,7 @@ function showFrozen(data) {
       <img src="${item.img}" class="img">
       <h3>${itemName}</h3>
       <a><del>${item.preprice}</del></a>
-      <p style="color:orange; display:inline">${item.discount}</p> 
+      <p style="color:orange; display:inline">${item.discount}</p>
       <p class="price">${item.price}</p>
       <a>(${item.perprice}/100g)</a>
     `;
@@ -108,7 +109,26 @@ function showFrozen(data) {
     div.appendChild(cartDiv);
     mainfcontainer.appendChild(div);
   }
+
+  // 이전 페이지 버튼 처리
+  if (currentFPage > 1) {
+    prevFButton.style.display = "inline";
+    prevFButton.disabled = false; // 이전 페이지 버튼 활성화
+  } else {
+    prevFButton.style.display = "inline";
+    prevFButton.disabled = true; // 이전 페이지 버튼 비활성화
+  }
+
+  // 다음 페이지 버튼 처리
+  if (endFIndex < data.length) {
+    nextFButton.style.display = "inline";
+    nextFButton.disabled = false; // 다음 페이지 버튼 활성화
+  } else {
+    nextFButton.style.display = "inline";
+    nextFButton.disabled = true; // 다음 페이지 버튼 비활성화
+  }
 }
+
 
 
 function loadFJSON(callback) {
